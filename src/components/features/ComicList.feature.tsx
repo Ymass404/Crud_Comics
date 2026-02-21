@@ -26,12 +26,15 @@ export default function ComicFeature() {
   }, []);
 
   return (
-    <div className="container">
+    <div className="container ">
       {comics.map((comic) => (
         <div key={comic.id}>
           <h2>{comic.title}</h2>
           <h3>{comic.author}</h3>
-          <img src={comic.imgUrl} alt="picture" />
+          <img
+            src={comic.imgUrl || ""}
+            alt={comic.title || "Couverture du comic"}
+          />
         </div>
       ))}
     </div>
