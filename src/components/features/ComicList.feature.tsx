@@ -1,6 +1,6 @@
 "use client";
 import { API } from "@/app/api/api";
-import { Comic, comicModel } from "@/models/comicModel";
+import { Comic } from "@/models/comicModel";
 import { useEffect, useState } from "react";
 
 export default function ComicFeature() {
@@ -26,14 +26,14 @@ export default function ComicFeature() {
   }, []);
 
   return (
-    <div>
-      {
-        (comics.map(comicModel) = (
-          <div key={comicModel.id}>
-            <h1>{title}</h1>
-          </div>
-        ))
-      }
+    <div className="container">
+      {comics.map((comic) => (
+        <div key={comic.id}>
+          <h2>{comic.title}</h2>
+          <h3>{comic.author}</h3>
+          <img src={comic.imgUrl} alt="picture" />
+        </div>
+      ))}
     </div>
   );
 }

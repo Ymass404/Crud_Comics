@@ -8,7 +8,7 @@ const instance = axios.create({
 });
 
 export const comicRequest = {
-  allComic: async (): Promise<Comic> => {
+  allComic: async (): Promise<Comic[]> => {
     const response = await instance.get("/comics");
     return response.data;
   },
