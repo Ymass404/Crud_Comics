@@ -1,7 +1,7 @@
 import ComicRepositoryInterface from "@/interfaces/ComicRepositoryInterface";
 import { Comic } from "@/models/comicModel";
 
-export default class GetAllComic {
+export default class GetAllComicById {
   private comicRepository: ComicRepositoryInterface;
   constructor(comicRepository: ComicRepositoryInterface) {
     this.comicRepository = comicRepository;
