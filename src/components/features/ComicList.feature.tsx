@@ -26,7 +26,7 @@ export default function ComicFeature() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 text-white p-8">
+    <div className="min-h-screen  text-white p-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex justify-between items-center mb-10">
@@ -36,7 +36,7 @@ export default function ComicFeature() {
             onClick={RefreshComicList}
             className="bg-indigo-600 hover:bg-indigo-500 transition px-5 py-2 rounded-xl font-semibold shadow-lg hover:scale-105 active:scale-95"
           >
-            Refresh
+            Ajouter
           </button>
         </div>
 
