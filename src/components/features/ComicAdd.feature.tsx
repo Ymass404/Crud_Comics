@@ -16,6 +16,14 @@ export default function AddComic() {
   async function onSubmit(values: comicCreateDTOmodel) {
     try {
       await API.comicRequest.addComic(values);
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   }
+
+  return (
+    <div>
+      <h1>Page add</h1>
+    </div>
+  );
 }
