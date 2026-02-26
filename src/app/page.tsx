@@ -1,3 +1,4 @@
+import AddComic from "@/components/features/ComicAdd.feature";
 import ComicFeature from "@/components/features/ComicList.feature";
 
 export default function Home() {
