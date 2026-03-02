@@ -5,7 +5,7 @@ import z from "zod";
 export const comicUpdateDTOmodel = comicModel.omit({ id: true }).partial();
 export type ComicToUpdateDTO = z.infer<typeof comicUpdateDTOmodel>;
 
-export default class GetAllComic {
+export default class UpdateComic {
   private comicRepository: ComicRepositoryInterface;
   constructor(comicRepository: ComicRepositoryInterface) {
     this.comicRepository = comicRepository;
