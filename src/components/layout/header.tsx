@@ -2,30 +2,36 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <nav className="flex items-center justify-between px-8 py-4 bg-neutral-300 shadow-sm">
-      <h1 className="text-xl font-bold text-gray-800 tracking-tight">
-        AppComics
-      </h1>
-      <div className="flex gap-8">
-        <Link
-          href="/"
-          className="text-sm font-bold text-blue-600  hover:text-black transition-colors duration-200"
-        >
-          Accueil
-        </Link>
-        <Link
-          href=""
-          className="text-sm font-bold text-blue-600 hover:text-black transition-colors duration-200"
-        >
-          Liste de Comics
-        </Link>
-        <Link
-          href="/add-comics"
-          className="text-sm font-bold text-blue-600 hover:text-black transition-colors duration-200"
-        >
-          Ajoute de Comics
-        </Link>
-      </div>
-    </nav>
+    <header className="border-b border-zinc-800 bg-zinc-950">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+        <h1 className="text-lg font-semibold tracking-tight text-white">
+          AppComics
+        </h1>
+
+        {/* Links */}
+        <div className="flex items-center gap-6">
+          <Link
+            href="/"
+            className="text-sm text-zinc-400 transition hover:text-white"
+          >
+            Accueil
+          </Link>
+
+          <Link
+            href="/list-comics"
+            className="text-sm text-zinc-400 transition hover:text-white"
+          >
+            Liste
+          </Link>
+
+          <Link
+            href="/add-comics"
+            className="rounded-lg bg-white px-4 py-2 text-sm font-medium text-zinc-900 transition hover:bg-zinc-200"
+          >
+            Ajouter
+          </Link>
+        </div>
+      </nav>
+    </header>
   );
 }

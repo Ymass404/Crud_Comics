@@ -3,7 +3,7 @@ import { API } from "@/app/api/api";
 import { Comic } from "@/models/comicModel";
 import { useEffect, useState } from "react";
 
-export default function ComicFeature() {
+export default function ComicList() {
   const [comics, setComics] = useState<Comic[]>([]);
 
   const RefreshComicList = () => {
@@ -26,39 +26,43 @@ export default function ComicFeature() {
   }, []);
 
   return (
-    <div className="min-h-screen  text-white p-8">
+    <div className="min-h-screen bg-zinc-950 text-zinc-100 px-6 py-10">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="flex justify-between items-center mb-10">
-          <h1 className="text-3xl md:text-4xl font-bold">Comic Collection</h1>
-
-          <button
-            onClick={RefreshComicList}
-            className="bg-indigo-600 hover:bg-indigo-500 transition px-5 py-2 rounded-xl font-semibold shadow-lg hover:scale-105 active:scale-95"
-          >
-            Ajouter
-          </button>
+        <div className="flex flex-col gap-4 sm:flex-row sm:justify-between sm:items-end mb-10">
+          <div>
+            <h1 className="text-3xl md:text-4xl font-semibold tracking-tight">
+              Comic Collection
+            </h1>
+            <p className="mt-2 text-sm text-zinc-400">
+              {comics.length} comic{comics.length > 1 ? "s" : ""}
+            </p>
+          </div>
         </div>
 
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <div className="grid gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {comics.map((comic) => (
             <div
               key={comic.id}
-              className="bg-slate-800 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition transform hover:-translate-y-2"
+              className="group overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40 transition hover:bg-zinc-900"
             >
-              <div className="h-64 overflow-hidden">
+              <div className="h-64 overflow-hidden bg-zinc-900">
                 <img
                   src={comic.imgUrl || ""}
                   alt={comic.title || "Couverture du comic"}
-                  className="w-full h-full object-cover hover:scale-110 transition duration-500"
+                  className="w-full h-full object-cover transition duration-300 group-hover:scale-[1.02]"
                 />
               </div>
 
               <div className="p-5">
-                <h2 className="text-lg font-bold truncate">{comic.title}</h2>
-                <h3 className="text-sm text-slate-400 mt-1">{comic.author}</h3>
+                <h2 className="text-base font-semibold truncate text-zinc-100">
+                  {comic.title}
+                </h2>
+                <h3 className="text-sm text-zinc-400 mt-1 truncate">
+                  {comic.author}
+                </h3>
 
-                <button className="mt-4 w-full bg-indigo-600 hover:bg-indigo-500 py-2 rounded-lg text-sm font-semibold transition">
+                <button className="mt-4 w-full rounded-xl border border-zinc-800 bg-transparent py-2.5 text-sm font-semibold text-zinc-100 transition hover:bg-zinc-800">
                   Voir le détail
                 </button>
               </div>
